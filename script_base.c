@@ -12,7 +12,7 @@
 int main() {
     // Variables para medir tiempo
     clock_t start, end;
-    double cpu_time_used
+    double cpu_time_used;
 
     // Reservar memoria dinámica para la cuadrícula como un array unidimensional
     double *grid = malloc(SIZE * SIZE * sizeof(double));
@@ -22,7 +22,7 @@ int main() {
         return EXIT_FAILURE;
     }
 
-    start = clock();
+    start = clock(); // Comenzar medicion del tiempo
 
     int i, j, step; // Variables de control para los bucles
 
@@ -50,12 +50,12 @@ int main() {
         }
     }
 
-    end = clock();
+    end = clock(); // Terminar medicion del tiempo
     cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
 
     // Imprimir el valor final en el centro de la cuadrícula
     printf("Final grid center value: %f\n", grid[(SIZE / 2) * SIZE + (SIZE / 2)]);
-    printf("Time: %f", cpu_time_used)
+    printf("Time: %f", cpu_time_used);
 
     // Liberar la memoria asignada para la cuadrícula
     free(grid);

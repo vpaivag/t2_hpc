@@ -1,0 +1,9 @@
+Running script_v1...
+Final grid center value: 0.477441
+Time: 33.726325
+Running script_v2...
+Final grid center value: 0.636588
+Time: 43.299052
+Running script_v3...
+Final grid center value: 0.636588
+Time: 43.343802

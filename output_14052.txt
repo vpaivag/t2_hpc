@@ -1,0 +1,2 @@
+Final grid center value: 0.159151
+Time: 489.717612

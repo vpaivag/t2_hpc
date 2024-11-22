@@ -12,17 +12,22 @@ int main() {
 
     // Reservar memoria dinámica para la cuadrícula como un array unidimensional
     double *grid = malloc(SIZE * SIZE * sizeof(double));
-    if (grid == NULL) {
+    double *new_grid = malloc(SIZE * SIZE * sizeof(double));
+
+    if (grid == NULL || new_grid == NULL) {
         // Verificar si la asignación de memoria falló
         fprintf(stderr, "Error: Unable to allocate memory for grid.\n");
         return EXIT_FAILURE;
     }
+
+    start = omp_get_wtime(); // Comenzar medicion del tiempo
 
     int i, j, step; // Variables de control para los bucles
 
     // Inicializar toda la cuadrícula con valores de 0.0
     for (i = 0; i < SIZE * SIZE; i++) {
         grid[i] = 0.0;
+        new_grid[i] = 0.0;
     }
 
     // Establecer un valor inicial alto en el centro de la cuadrícula
@@ -43,13 +48,24 @@ int main() {
                 );
             }
         }
+
+        // Rotacion de cuadriculas
+        double *temp = grid;
+        grid = new_grid;
+        new_grid = temp;
     }
+
+    end = omp_get_wtime(); // Finalizar medicion del tiempo
+    cpu_time_used = end - start;
 
     // Imprimir el valor final en el centro de la cuadrícula
     printf("Final grid center value: %f\n", grid[(SIZE / 2) * SIZE + (SIZE / 2)]);
+    printf("Time: %f", cpu_time_used);
+
 
     // Liberar la memoria asignada para la cuadrícula
     free(grid);
+    free(new_grid);
 
     return 0; // Terminar el programa con éxito
 }

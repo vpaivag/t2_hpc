@@ -4,6 +4,10 @@ Este repositorio contiene tres implementaciones distintas de un simulador de dif
 
 ## Descripción de los Archivos
 
+> Todos utilizan una **Doble cuadrícula (Double Grid)**:
+  Una segunda cuadrícula (`new_grid`) almacena los valores actualizados en cada paso de simulación para evitar dependencias de datos y conflictos entre los hilos.
+
+
 ### 1. **`script_v1.c`**
 
 Este script utiliza:
@@ -11,9 +15,6 @@ Este script utiliza:
 - **OpenMP para paralelizar los cálculos**:
   Se aplica `#pragma omp parallel for private(j)` para paralelizar el bucle exterior que recorre las filas de la cuadrícula.
   
-- **Doble cuadrícula (Double Grid)**:
-  Una segunda cuadrícula (`new_grid`) almacena los valores actualizados en cada paso de simulación para evitar dependencias de datos y conflictos entre los hilos.
-
 **Ventajas**:
 - Evita problemas de acceso simultáneo a datos.
 - Simple de implementar y escalable para sistemas con múltiples núcleos.
