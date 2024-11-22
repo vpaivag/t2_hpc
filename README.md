@@ -53,7 +53,7 @@ Para correr los scripts se tienen dos archivos `bash`. El primero `slurm_base.sh
 ```bash
 sbatch slurm_base.sh # Ejecuta solo el script base
 sbatch slurm.sh # Ejecuta las 3 versiones paralelizadas
-
+```
 
 
 
