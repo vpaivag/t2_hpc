@@ -4,7 +4,7 @@ Este repositorio contiene tres implementaciones distintas de un simulador de dif
 
 ## Descripción de los Archivos
 
-### 1. **`parallel_double_grid.c`**
+### 1. **`script_v1.c`**
 
 Este script utiliza:
 
@@ -18,7 +18,7 @@ Este script utiliza:
 - Evita problemas de acceso simultáneo a datos.
 - Simple de implementar y escalable para sistemas con múltiples núcleos.
 
-### 2. **`parallel_blocking.c`**
+### 2. **`script_v2.c`**
 
 Este script utiliza:
 
@@ -32,7 +32,7 @@ Este script utiliza:
 - Mejor uso de la jerarquía de memoria del procesador.
 - Muy eficiente en sistemas con grandes cachés.
 
-### 3. **`parallel_convergence.c`**
+### 3. **`script_v3.c`**
 
 Este script utiliza:
 
